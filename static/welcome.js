@@ -19,6 +19,7 @@ function addNewUser() {
     data: { name, photo, age, gender, balance },
     success: (rsp) => {
       console.log('success!! Added new user!', rsp);
+      window.location.reload(true);
     },
   });
 }

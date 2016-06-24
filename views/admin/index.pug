@@ -1,0 +1,67 @@
+extends ../shared/template
+block content
+  h1 Welcome to the admin page!!
+  button#btnNew Add New User
+  button#btnNewCountry Add New Country
+  button#btnNewCity Add New City
+
+
+  #newUser.invisible
+    ul
+      li
+        span Name
+        input#txtName(type='text', value='Joe Test')
+      li
+        span Photo
+        input#txtPhoto(type='text', value='http://www.babaimage.com/images/people-boulder-portrait-photography.jpg')
+      li
+        span Age
+        input#txtAge(type='text', value='26')
+      li
+        span Gender
+        input#txtGender(type='text', value='Female')
+      li
+        span Starting Balance (dollars)
+        input#txtBalance(type='text', value='1000')
+      li
+        button#btnSubmit Submit User
+
+  #newCountry.invisible
+    ul
+      li
+        span Name
+        input#txtCountryName(type='text', value='America')
+      li
+        span Photos (separated by commas no spaces)
+        input#txtCountryPhotos(type='text', value='http://www.babaimage.com/images/people-boulder-portrait-photography.jpg,http://www.babaimage.com/images/people-boulder-portrait-photography.jpg')
+      li
+        span Cities (separated by commas no spaces)
+        input#txtCities(type='text', value='Chicago,Detroit')
+      li
+        span Balance
+        input#txtCountryBalance(type='number',value='10000')
+      li
+        button#btnSubmitCountry Submit Country
+
+  #newCity.invisible
+    ul
+      li
+        span Name
+        input#txtCityName(type='text', value='Chicago')
+      li
+        span Photos (separated by commas no spaces)
+        input#txtCityPhotos(type='text', value='http://www.babaimage.com/images/people-boulder-portrait-photography.jpg,http://www.babaimage.com/images/people-boulder-portrait-photography.jpg')
+      li
+        span CostToVisit
+        input#txtCost(type='number', value='500')
+      li
+        span Country
+        input#txtCountry(type='string', value='America')
+      li
+        span People (separated by commas no spaces)
+        input#txtPeople(type='string', value='Daryl,Eli')
+      li
+        span Balance
+        input#txtCityBalance(type='Number', value='10000')
+      li
+        button#btnSubmitCity Submit City
