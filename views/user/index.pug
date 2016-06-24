@@ -1,7 +1,6 @@
 extends ../shared/template
 block content
-  h1 Welcome ${user.name}
-  h3 #{countries[0].name}
+  h1 Welcome #{person.name}
   body
 
     h3 List of Countries you can visit
@@ -21,12 +20,12 @@ block content
             each country , index in countries
               if(index === 0)
                 .item.active
-                  a(data-toggle='collapse', data-target='#demo')
-                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+                  a(id= 'countryPic' , data-toggle='collapse', data-target='#demo2')
+                    img(height= '800px', width= '1000px', src=country.picture, value=country.id)
               else
                 .item
-                  a(data-toggle='collapse', data-target='#demo')
-                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+                  a(id= 'countryPic', data-toggle='collapse', data-target='#demo2')
+                    img(height= '800px', width= '1000px', src=country.picture, value=country.id)
           // Left and right controls
           a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
             span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
@@ -61,11 +60,11 @@ block content
               if(index === 0)
                 .item.active
                   a(data-toggle='collapse', data-target='#demo2')
-                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+                    img(height= '800px', width= '1000px', src=country.picture, value=country.id)
               else
                 .item
                   a(data-toggle='collapse', data-target='#demo2')
-                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+                    img(height= '800px', width= '1000px', src=country.picture, value=country.id)
           // Left and right controls
           // Left and right controls
           a.left.carousel-control(href='#myCarousel2', role='button', data-slide='prev')
