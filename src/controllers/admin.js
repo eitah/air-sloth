@@ -7,7 +7,11 @@ import City from '../models/city';
 import Country from '../models/country';
 
 router.get('/', (req, res) => {
-  res.render('admin');
+  City.find((cityerr, cities) => {
+    Country.find((countryerr, countries) => {
+      res.render('admin', { cities, countries });
+    });
+  });
 });
 
 router.post('/newUser', (req, res) => {

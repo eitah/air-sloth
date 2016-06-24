@@ -45,7 +45,7 @@ function addNewCountry() {
     data: { name, photos, cities, balance },
     success: (rsp) => {
       console.log('success!! Added new Country!', rsp);
-      // window.location.reload(true);
+      window.location.reload(true);
     },
   });
 }
@@ -65,7 +65,7 @@ function addNewCity() {
     data: { name, photos, cost, country, people, balance },
     success: (rsp) => {
       console.log('success!! Added new city!', rsp);
-      // window.location.reload(true);
+      window.location.reload(true);
     },
   });
 }

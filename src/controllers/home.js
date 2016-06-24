@@ -3,6 +3,8 @@
 import express from 'express';
 const router = module.exports = express.Router();
 import Person from '../models/person';
+import City from '../models/city';
+import Country from '../models/country';
 
 router.get('/', (req, res) => {
   Person.find((err, users) => {

@@ -35,8 +35,12 @@ block content
         span Photos (separated by commas no spaces)
         input#txtCountryPhotos(type='text', value='http://www.babaimage.com/images/people-boulder-portrait-photography.jpg,http://www.babaimage.com/images/people-boulder-portrait-photography.jpg')
       li
-        span Cities (separated by commas no spaces)
-        input#txtCities(type='text', value='Chicago,Detroit')
+        div Cities
+          select#txtCities
+            each city in cities
+              option(value= `${city._id}`)= `${city.name}`
+
+
       li
         span Balance
         input#txtCountryBalance(type='number',value='10000')
@@ -56,7 +60,9 @@ block content
         input#txtCost(type='number', value='500')
       li
         span Country
-        input#txtCountry(type='string', value='America')
+        select#txtCountry
+          each country in countries
+            option(value=`${country._id}`)=`${country.name}`
       li
         span People (separated by commas no spaces)
         input#txtPeople(type='string', value='Daryl,Eli')
