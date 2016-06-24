@@ -1,0 +1,98 @@
+extends ../shared/template
+block content
+  h1 Welcome ${user.name}
+  h3 #{countries[0].name}
+  body
+
+    h3 List of Countries you can visit
+
+    .row
+      .col-xs-2
+      .col-xs-8
+        #myCarousel.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+            li(data-target='#myCarousel', data-slide-to='2')
+            li(data-target='#myCarousel', data-slide-to='3')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+            each country , index in countries
+              if(index === 0)
+                .item.active
+                  a(data-toggle='collapse', data-target='#demo')
+                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+              else
+                .item
+                  a(data-toggle='collapse', data-target='#demo')
+                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+          // Left and right controls
+          a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+      .col-xs-2
+  #demo.collapse
+    .row(data-toggle='collapse')
+      .col-xs-12
+        h3 View all the details related to this Country here.
+        p Average Weather Condition
+        p Ideal time to travel
+        p Travel advisory warnings
+
+
+    h3 List of Cities in the country ${country.name}
+    .row
+      .col-xs-2
+      .col-xs-8
+        #myCarousel2.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCarousel2', data-slide-to='0')
+            li(data-target='#myCarousel2', data-slide-to='1')
+            li(data-target='#myCarousel2', data-slide-to='2')
+            li(data-target='#myCarousel2', data-slide-to='3')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+            each country , index in countries
+              if(index === 0)
+                .item.active
+                  a(data-toggle='collapse', data-target='#demo2')
+                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+              else
+                .item
+                  a(data-toggle='collapse', data-target='#demo2')
+                    img(height= '800px', width= '1000px', src=country.picture, alt=country.name)
+          // Left and right controls
+          // Left and right controls
+          a.left.carousel-control(href='#myCarousel2', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCarousel2', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+      .col-xs-2
+    #demo2.collapse
+      .row(data-toggle='collapse')
+        .col-xs-12
+          h3 View all the details related to this City here.
+          p Average Weather Condition
+          p Ideal time to travel
+          p Travel advisory warnings
+      .row
+        .col-xs-6
+          h3 You have selected to visit ${city.name} in ${country.name}
+          p Your cost for travel ${city.amount}
+          p Your pending amount in your account ${person.balance}
+        .col-xs-6
+          h3 Connect with others traveling to your Destination
+          p Travel network and companion to visit ${city.name} in ${country.name}
+          p ${city} - Array of ${persons}
+          p ${country} - Array of ${persons} in Array of all cities within that country
+
+
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/user.js')
