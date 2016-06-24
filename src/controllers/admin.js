@@ -3,6 +3,8 @@
 import express from 'express';
 const router = module.exports = express.Router();
 import Person from '../models/person';
+import City from '../models/city';
+import Country from '../models/country';
 
 router.get('/', (req, res) => {
   res.render('admin');
@@ -15,5 +17,25 @@ router.post('/newUser', (req, res) => {
     if (err) { console.log(err); }
     console.log('save response object', res.body);
     res.send(myUser);
+  });
+});
+
+router.post('/newCity', (req, res) => {
+  console.log('new city is running', req.body);
+  const myCity = new City(req.body);
+  myCity.save((err) => {
+    if (err) { console.log(err); }
+    console.log('save response object', res.body);
+    res.send(myCity);
+  });
+});
+
+router.post('/newCountry', (req, res) => {
+  console.log('newcountry is running', req.body);
+  const myCountry = new Country(req.body);
+  myCountry.save((err) => {
+    if (err) { console.log(err); }
+    console.log('save response object', res.body);
+    res.send(myCountry);
   });
 });
