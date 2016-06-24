@@ -1,3 +1,63 @@
 extends ../shared/template
 block content
-  h1 Home
+  h1 Welcome to airsloth!!
+
+  h3 Pick a user below. Or make a new user using the fields below
+  button#btnNew Add New User
+
+  #newUser.invisible
+    ul
+      li
+        span Name
+        input#txtName(type='text', value='Joe Test')
+      li
+        span Photo
+        input#txtPhoto(type='text', value='http://www.babaimage.com/images/people-boulder-portrait-photography.jpg')
+      li
+        span Age
+        input#txtAge(type='text', value='26')
+      li
+        span Gender
+        input#txtGender(type='text', value='Female')
+      li
+        span Starting Balance (dollars)
+        input#txtBalance(type='text', value='1000')
+      li
+        button#btnSubmit Submit User
+
+
+
+          //- form.form-inline(action= '/admin/newUser', method='post')
+          //-   button.btn.btn-primary(type='submit') Create a new user
+
+
+
+  table.table.table-striped
+    thead
+      tr
+        th Select User
+        //- th id
+        th Name
+        th Photo
+        th Age
+        th Gender
+        th Balance (Dollars)
+        th Created At
+        th ID
+
+    tbody
+      each user in users
+
+        tr
+          td
+            form.form-inline(action= '/' + user._id + '/', method='post')
+              button.btn.btn-primary(type='submit') Select User
+
+          td= user.name
+          td
+            img.img-responsive.thumbnail(src=user.photo)
+          td= user.age
+          td= user.gender
+          td= user.balance
+          td= user.createdAt
+          td= user._id

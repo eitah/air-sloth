@@ -2,7 +2,7 @@
   "name": "airsloth",
   "version": "1.0.3",
   "scripts": {
-    "dev": "DB=air-sloth LEVEL=silly PORT=3333 nodemon dst/server.js"
+    "dev": "DB=airsloth LEVEL=silly PORT=3333 nodemon dst/server.js"
   },
   "author": "Elijah Jayam Rudy Daryl",
   "license": "MIT",
