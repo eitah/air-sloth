@@ -1,7 +1,6 @@
 extends ../shared/template
 block content
   h1 Welcome to airsloth!!
-
   h3 Pick a user below. Or make a new user using the fields below
   button#btnNew Add New User
 
@@ -61,3 +60,6 @@ block content
           td= user.balance
           td= user.createdAt
           td= user._id
+
+    block scripts
+      script(src='/welcome.js')

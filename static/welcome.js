@@ -1,6 +1,7 @@
 $(document).ready(initialize);
 
 function toggleNewUser() {
+  console.log('button is being clicked');
   $('#newUser').toggleClass('invisible');
 }
 
@@ -24,8 +25,8 @@ function addNewUser() {
   });
 }
 
-
 function initialize() {
+  console.log('buttons are initializes');
   $('#btnNew').click(toggleNewUser);
   $('#btnSubmit').click(addNewUser);
 }
