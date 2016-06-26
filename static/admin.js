@@ -45,6 +45,7 @@ function addNewCountry() {
     data: { name, photos, cities, balance },
     success: (rsp) => {
       console.log('success!! Added new Country!', rsp);
+      debugger;
       // window.location.reload(true);
     },
   });
@@ -72,7 +73,7 @@ function addNewCity() {
 
 
 function initialize() {
-  $('#btnNew').click(toggleNewUser);
+  $('#btnNewUser').click(toggleNewUser);
   $('#btnNewCountry').click(toggleNewCountry);
   $('#btnNewCity').click(toggleNewCity);
   $('#btnSubmit').click(addNewUser);
