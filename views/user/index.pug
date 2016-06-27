@@ -1,0 +1,93 @@
+extends ../shared/template
+block content
+  #person(personid=person._id)
+  h1 Welcome #{person.name}
+  body
+    #Countriesheader
+      h3 List of Countries you can visit
+    .row
+      .col-xs-3
+      .col-xs-6
+        #myCountryCarousel.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCountryCarousel', data-slide-to='0')
+            li(data-target='#myCountryCarousel', data-slide-to='1')
+            li(data-target='#myCountryCarousel', data-slide-to='2')
+            li(data-target='#myCountryCarousel', data-slide-to='3')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+            each country , index in countries
+                .item
+                  .carousel-caption
+                    h1 #{country.name}
+                  a( class = "countrySelect" value=country.id, data-country-name = country.name, id= 'countryPic2' , data-toggle='collapse', data-target='#demo2')
+                    img(height= '800px', width= '1000px', src=country.photos[0], value=country.id, alt=country.name)
+                    // Left and right controls
+          a.left.carousel-control(href='#myCountryCarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCountryCarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+      .col-xs-3
+
+
+
+
+
+  #countryDetails.collapse
+    .row(data-toggle='collapse')
+      .col-xs-12
+        h3
+        p Average Weather Condition
+        p Ideal time to travel
+        p Travel advisory warnings
+  #city
+    .row
+      .col-xs-3
+      .col-xs-6
+        #myCityCarousel.carousel.slide(data-ride='carousel')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCityCarousel', data-slide-to='0')
+            li(data-target='#myCityCarousel', data-slide-to='1')
+            li(data-target='#myCityCarousel', data-slide-to='2')
+            li(data-target='#myCityCarousel', data-slide-to='3')
+          // Wrapper for slides
+          .carousel-inner(role='listbox')
+                    // Left and right controls
+          a.left.carousel-control(href='#myCityCarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCityCarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+      .col-xs-3
+  #cityDetails
+    .row
+      .col-xs-6
+        h2 This is the Current Weather details
+      .col-xs-6
+        #currentweather
+          h3
+          h3
+          h3
+
+  #PurchaseOptions
+    .row
+      .col-xs-6
+        h2 This is account balance information.
+      .col-xs-6
+          h3
+          h3
+          h3
+          button#btnConfirmBuy ConfirmPurchase
+  #PurchaseConfirmation
+    .row
+      .col-xs-12
+        h2 Congratulations!! Plan for your trip. Dont forget to buy Insurance from Allstate.
+
+
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/user.js')

@@ -26,6 +26,6 @@ function addNewUser() {
 
 
 function initialize() {
-  $('#btnNew').click(toggleNewUser);
+  $('#btnNewUser').click(toggleNewUser);
   $('#btnSubmit').click(addNewUser);
 }

@@ -24,6 +24,7 @@ app.listen(port, () => {
 
 app.use('/', require('./controllers/home'));
 app.use('/admin', require('./controllers/admin'));
-// app.use('/user', require('./controllers/user'));
+
+app.use('/user', require('./controllers/user'));
 
 module.exports = app;

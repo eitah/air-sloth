@@ -50,7 +50,7 @@ block content
 
         tr
           td
-            form.form-inline(action= '/' + user._id + '/', method='post')
+            form.form-inline(action= '/user/' + user._id + '/', method='get')
               button.btn.btn-primary(type='submit') Select User
 
           td= user.name
